@@ -32,6 +32,6 @@ public class User {
     @Column(nullable = false, unique = true)
     private String email;
 
-    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "user")
+    @OneToMany(fetch = FetchType.EAGER, cascade = { CascadeType.ALL, CascadeType.REMOVE }, mappedBy = "user")
     private List<Task> tasks = new ArrayList<>();
 }
